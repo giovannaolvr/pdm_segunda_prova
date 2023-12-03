@@ -1,6 +1,8 @@
+// QUESTÃO 02
+
 import 'package:path/path.dart';
 import 'package:pdm_segunda_prova/domain/pais.dart';
-import 'package:sqflite/sqflite.dart';
+import 'package:sqflite/sqflite.dart'; 
 
 class PaisesHelper {
   static final PaisesHelper _instance = PaisesHelper.internal();

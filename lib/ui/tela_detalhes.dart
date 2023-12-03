@@ -1,3 +1,5 @@
+// QUESTAO 7) TelaDetalhes, recebe ID, Texts com registros
+
 import 'package:flutter/material.dart';
 import 'package:pdm_segunda_prova/domain/pais.dart';
 import 'package:pdm_segunda_prova/helpers/pais_helper.dart';

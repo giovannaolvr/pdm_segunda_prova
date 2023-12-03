@@ -1,6 +1,9 @@
+//QUESTAO 6) TelaAltera, Alterar país, validação, ScankBar
+
 import 'package:flutter/material.dart';
 import 'package:pdm_segunda_prova/domain/pais.dart';
 import 'package:pdm_segunda_prova/helpers/pais_helper.dart';
+import 'package:pdm_segunda_prova/ui/tela_home.dart';
 
 class TelaAltera extends StatefulWidget {
   final int paisId;
@@ -80,8 +83,24 @@ class _TelaAlteraState extends State<TelaAltera> {
             ElevatedButton(
               onPressed: () {
                 _atualizarPais();
+
+                // Navega de volta à tela principal
+                Navigator.pushReplacement(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const TelaHome(),
+                  ),
+                );
+
+                // Mostra o SnackBar com a mensagem
+                ScaffoldMessenger.of(context).showSnackBar(
+                  const SnackBar(
+                    content: Text('País alterado com sucesso!'),
+                    duration: Duration(seconds: 2),
+                  ),
+                );
               },
-              child: Text('Atualizar'),
+              child: Text('Confirmar'),
             ),
           ],
         ),

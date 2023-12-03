@@ -1,3 +1,5 @@
+// QUESTÃO 5) TelaCadastro, Cadastrar País, validação, SnackBar
+
 import 'package:flutter/material.dart';
 import 'package:pdm_segunda_prova/domain/pais.dart';
 import 'package:pdm_segunda_prova/helpers/pais_helper.dart';
@@ -134,22 +136,19 @@ class _FormPaisBodyState extends State<FormPaisBody> {
                     );
                     paisHelper.savePais(p);
 
-                    // Mostra o SnackBar com a mensagem
-                    ScaffoldMessenger.of(context).showSnackBar(
-                      const SnackBar(
-                        content: Text('País cadastrado com sucesso!'),
-                        duration: Duration(seconds: 2),
-                      ),
-                    );
-
-                    // Aguarda um tempo antes de navegar de volta à tela principal
-                    await Future.delayed(Duration(seconds: 2));
-
                     // Navega de volta à tela principal
                     Navigator.pushReplacement(
                       context,
                       MaterialPageRoute(
                         builder: (context) => const TelaHome(),
+                      ),
+                    );
+
+                    // Mostra o SnackBar com a mensagem
+                    ScaffoldMessenger.of(context).showSnackBar(
+                      const SnackBar(
+                        content: Text('País cadastrado com sucesso!'),
+                        duration: Duration(seconds: 2),
                       ),
                     );
                   }
